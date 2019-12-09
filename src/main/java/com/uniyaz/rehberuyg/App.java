@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class App 
 {
 	static List<Kisi>kisilist=new ArrayList<Kisi>();
-	static int IDsayac=0;	
 	static boolean cikis=false;
 	
     public static void main( String[] args )
@@ -28,10 +27,10 @@ public class App
 
 			switch (secim) {
 			case 1:
-				kisiekle(scan);				
+				kisiEkle(scan);
 				break;
 			case 2:
-				kullanicisil(scan);								
+				kisiSil(scan);
 				break;				
 			case 3:
 				listele();
@@ -50,7 +49,7 @@ public class App
     	System.out.println("---- Güle Güle ----");
     }
 
-    public static void kisiekle(Scanner scan) {
+    public static void kisiEkle(Scanner scan) {
     	System.out.print("Adı: "); 
     	String ad=scan.next();
     	
@@ -64,7 +63,7 @@ public class App
     	kisilist.add(kisi);
     }
     
-    public static void kullanicisil(Scanner scan) {
+    public static void kisiSil(Scanner scan) {
     	listele();
     	System.out.print("Silinecek Kişinin ID Numarası : "); 
     	int ID=scan.nextInt();
@@ -80,21 +79,21 @@ public class App
     
 	public static void arama(Scanner scan) {
 		System.out.print("Aradığınız ismi giriniz: "); 
-		String kullaniciadi=scan.next();
-		boolean sonucvarmi=false;
+		String kullaniciAdi=scan.next();
+		boolean sonucVarMi=false;
 		System.out.println();
 		System.out.println("\tSIRA NO\t\tADI\t\t\t SOYADI \tTELEFON          ");
 		System.out.println("---------------------------------------------------------------");
            
 		for (Kisi kisi1: kisilist) {
-			if(kisi1.getAd().contains(kullaniciadi))
+			if(kisi1.getAd().contains(kullaniciAdi))
 			{					   
 		        System.out.println("\t" +kisi1.getId() + "\t\t" + kisi1.getAd() + "\t\t\t" + kisi1.getSoyad() + "\t\t"+kisi1.getTel());		                    
-		        sonucvarmi=true;
+		        sonucVarMi=true;
 			}
 		}
 		
-		if(!sonucvarmi) 
+		if(!sonucVarMi)
 		{
 			System.out.println("Aradığınız Kriterde Kullanıcı Bulunamadı!");
 		}

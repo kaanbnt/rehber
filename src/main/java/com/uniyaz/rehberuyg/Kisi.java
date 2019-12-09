@@ -9,7 +9,6 @@ public class Kisi {
 	public Kisi(String ad,String soyad,String tel) {
 		idcounter++;
 		this.id=idcounter;
-		this.id=idcounter;
 		this.ad=ad;
 		this.soyad=soyad;
 		this.tel=tel;
